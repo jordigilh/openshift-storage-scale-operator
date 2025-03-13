@@ -34,12 +34,12 @@ BUNDLE_METADATA_OPTS ?= $(BUNDLE_CHANNELS) $(BUNDLE_DEFAULT_CHANNEL)
 #
 # For example, running 'make bundle-build bundle-push catalog-build catalog-push' will build and push both
 # purplestorage.com/purple-storage-rh-operator-bundle:$VERSION and purplestorage.com/purple-storage-rh-operator-catalog:$VERSION.
-IMAGE_TAG_BASE ?= quay.io/hybridcloudpatterns/purple-storage-rh-operator
+IMAGE_TAG_BASE ?= quay.io/openshift-storage-scale/openshift-storage-scale-operator
 
 
 # always release the console with the same tag as the operator and the other way around!
 # Image base URL of the console plugin
-CONSOLE_PLUGIN_IMAGE_BASE ?= quay.io/hybridcloudpatterns/purple-storage-rh-operator-console
+CONSOLE_PLUGIN_IMAGE_BASE ?= quay.io/openshift-storage-scale/openshift-storage-scale-console
 CONSOLE_PLUGIN_IMAGE ?= $(CONSOLE_PLUGIN_IMAGE_BASE):v$(VERSION)
 
 
