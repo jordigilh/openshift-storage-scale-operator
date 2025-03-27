@@ -102,10 +102,11 @@ type MachineConfigNodeSpec struct {
 // MachineConfigNodeStatus holds the reported information on a particular machine config node.
 type MachineConfigNodeStatus struct {
 	// conditions represent the observations of a machine config node's current state.
+	// +patchMergeKey=type
+	// +patchStrategy=merge
 	// +listType=map
 	// +listMapKey=type
-	// +optional
-	Conditions []metav1.Condition `json:"conditions,omitempty"`
+	Conditions []metav1.Condition `json:"conditions,omitempty" patchStrategy:"merge" patchMergeKey:"type"`
 	// observedGeneration represents the generation observed by the controller.
 	// This field is updated when the controller observes a change to the desiredConfig in the configVersion of the machine config node spec.
 	// +required
